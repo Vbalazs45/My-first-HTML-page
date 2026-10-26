@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Pontszám ellenőrzés</title>
+</head>
+<body>
+
+    <h1>Haladás az oldalon</h1>
+    <p>A pontjaid száma: <span id="pontszam-kijelzo">0</span></p>
+    
+    <!-- Egy gomb, amivel növelheted a pontot -->
+    <button onclick="pontotKapsz()">Pont gyűjtése</button>
+
+    <script>
+        // Itt van a változód, amivel kezdetben 0 pontod van
+        let x = 0; 
+
+        function pontotKapsz() {
+            // Növeljük a pontot 1-gyel (vagy amennyivel szeretnéd)
+            x = x + 1;
+            
+            // Kiírjuk a képernyőre a aktuális pontot
+            document.getElementById("pontszam-kijelzo").innerText = x;
+
+            // Itt vizsgáljuk meg, hogy eléri-e a 10-et
+            if (x >= 10) {
+                alert("Megvan a 10 pont! Továbblépés a következő oldalra...");
+                
+                // Itt tudod átirányítani a másik oldalra:
+                window.location.href = "masodik_oldal.html";
+            }
+        }
+    </script>
+
+</body>
+</html>
